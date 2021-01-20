@@ -1,10 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "[![Actions Status](https://github.com/svetaminsk/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/svetaminsk/frontend-project-lvl2/actions)",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/svetaminsk/frontend-project-lvl2.git"
@@ -13,13 +11,19 @@
     "hexlet"
   ],
   "author": "Svetlana",
-  "type": "module",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/svetaminsk/frontend-project-lvl2/issues"
   },
   "homepage": "https://github.com/svetaminsk/frontend-project-lvl2#readme",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
+  "scripts": {
+    "test": "npx jest"
+  },
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
@@ -29,6 +33,7 @@
     "eslint-plugin-import": "^2.22.1"
   },
   "devDependencies": {
-    "eslint": "^7.17.0"
+    "eslint": "^7.17.0",
+    "jest": "^26.6.3"
   }
 }
