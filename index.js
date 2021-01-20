@@ -2,7 +2,6 @@ import _ from 'lodash';
 import fs from 'fs';
 import path from 'path';
 
-
 const getData = (filepath) => {
   const pathFile = path.resolve(process.cwd(), filepath);
   return JSON.parse(fs.readFileSync(pathFile, 'utf-8'));
@@ -23,10 +22,10 @@ export default (filepath1, filepath2) => {
       if (file2[key] === file1[key]) {
         acc[`  ${key}`] = file2[key];
       }
-    if (file2[key] !== file1[key]) {
-      acc[`- ${key}`] = file1[key];
-      acc[`+ ${key}`] = file2[key];
-    } return acc;
+      if (file2[key] !== file1[key]) {
+        acc[`- ${key}`] = file1[key];
+        acc[`+ ${key}`] = file2[key];
+      } return acc;
     }
     if (_.has(file1, key) && !_.has(file2, key)) {
       acc[`- ${key}`] = file1[key];
@@ -35,8 +34,8 @@ export default (filepath1, filepath2) => {
     acc[`+ ${key}`] = file2[key];
     return acc;
   }, {});
-    const entries = Object.entries(resultObject);
-    const tab = '  ';
-    const result = entries.reduce((acc, [key, value]) => acc.concat(`\n${tab}${key}: ${value}`), '');
-    return `{${result}\n}`;
-  };
+  const entries = Object.entries(resultObject);
+  const tab = '  ';
+  const result = entries.reduce((acc, [key, value]) => acc.concat(`\n${tab}${key}: ${value}`), '');
+  return `{${result}\n}`;
+};
