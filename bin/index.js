@@ -1,15 +1,11 @@
 import _ from 'lodash';
-import fs from 'fs';
 import path from 'path';
-
-const getData = (filepath) => {
-  const pathFile = path.resolve(process.cwd(), filepath);
-  return JSON.parse(fs.readFileSync(pathFile, 'utf-8'));
-};
+import parsers from './parsers.js';
 
 export default (filepath1, filepath2) => {
-  const file1 = getData(filepath1);
-  const file2 = getData(filepath2);
+  const type = path.extname(filepath1).slice(1);
+  const file1 = parsers(filepath1, type);
+  const file2 = parsers(filepath2, type);
   const keys1 = Object.keys(file1).sort();
   const keys2 = Object.keys(file2).sort();
   const keys = keys2.reduce((acc, key) => {

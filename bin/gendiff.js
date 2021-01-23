@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import program from 'commander';
 import path from 'path';
-import gendiff from '../index.js';
+import gendiff from './index.js';
 
 program
   .usage('[options] <filepath1> <filepath2>')
