@@ -22,3 +22,17 @@ test('general for yaml files', () => {
   const expected = readFile('general-for-yaml-files.txt');
   expect(gendiff(yaml1, yaml2)).toBe(expected);
 });
+
+test('nested json', () => {
+  const json1 = getFixturePath('nested1.json');
+  const json2 = getFixturePath('nested2.json');
+  const expected = readFile('nested.txt');
+  expect(gendiff(json1, json2)).toBe(expected);
+});
+
+test('nested yml', () => {
+  const yaml1 = getFixturePath('nested1.yml');
+  const yaml2 = getFixturePath('nested2.yml');
+  const expected = readFile('nested.txt');
+  expect(gendiff(yaml1, yaml2)).toBe(expected);
+});
