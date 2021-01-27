@@ -36,3 +36,10 @@ test('nested yml', () => {
   const expected = readFile('nested.txt');
   expect(gendiff(yaml1, yaml2)).toBe(expected);
 });
+
+test('plain', () => {
+  const plain1 = getFixturePath('nested1.yml');
+  const plain2 = getFixturePath('nested2.yml');
+  const expected = readFile('plain.txt');
+  expect(gendiff(plain1, plain2, 'plain')).toBe(expected);
+});
