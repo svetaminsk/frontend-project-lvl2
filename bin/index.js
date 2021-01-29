@@ -4,7 +4,7 @@ import parsers from './parsers.js';
 import tree from './tree.js';
 import formatted from '../formatters/format.js';
 
-const genDiff = (filepath1, filepath2, type = 'stylish') => {
+const gendiff = (filepath1, filepath2, type = 'stylish') => {
   const readFile = (filePath) => fs.readFileSync(filePath, 'utf-8');
   const absolutePathFile1 = path.resolve(process.cwd(), filepath1);
   const absolutePathFile2 = path.resolve(process.cwd(), filepath2);
@@ -15,4 +15,4 @@ const genDiff = (filepath1, filepath2, type = 'stylish') => {
   const tree1 = tree(parsed1, parsed2);
   return formatted(tree1, type);
 };
-export default genDiff;
+export default gendiff;
