@@ -1,4 +1,4 @@
-import getStylishOutput from './nested.js';
+import getStylishOutput from './stylish.js';
 import getPlainOutput from './plain.js';
 import getJSONOutput from './json.js';
 
@@ -8,7 +8,7 @@ export default (data, format) => {
       return getPlainOutput(data);
     case 'json':
       return getJSONOutput(data);
-    case 'nested':
+    case 'stylish':
       return getStylishOutput(data);
     default:
       throw new Error(`Unknown format ${format}`);

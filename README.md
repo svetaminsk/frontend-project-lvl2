@@ -1,5 +1,3 @@
-Compares two configuration files and shows a difference.
-
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/svetaminsk/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/svetaminsk/frontend-project-lvl2/actions)
 
@@ -21,10 +19,10 @@ Options:
 `-f, --format [type]` output format  
 `-h, --help` output usage information  
 
-`[type]` - `plain`, `json`, `nested`  
+`[type]` - `plain`, `json`, `stylish`  
 `<pathToFile>` - path to json or yaml file
 
 ## How it works:
-[![asciicast](https://asciinema.org/a/0tAidgSI013IBbiD4udYXOsXL.svg)](https://asciinema.org/a/0tAidgSI013IBbiD4udYXOsXL)
+[![asciicast](https://asciinema.org/a/68FuTfqStgngCKvgxsApfDPtc.svg)](https://asciinema.org/a/68FuTfqStgngCKvgxsApfDPtc)
 
 

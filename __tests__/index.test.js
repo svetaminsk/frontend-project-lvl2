@@ -3,8 +3,8 @@ import path from 'path';
 import gendiff from '../bin/index.js';
 
 const extensionsWithFormats = [
-  ['json', 'nested'], ['json', 'plain'], ['json', 'json'],
-  ['yml', 'nested'], ['yml', 'plain'], ['yml', 'json'],
+  ['json', 'stylish'], ['json', 'plain'], ['json', 'json'],
+  ['yml', 'stylish'], ['yml', 'plain'], ['yml', 'json'],
 ];
 const __dirname = path.resolve();
 const fixturesPath = `${__dirname}/__tests__/__fixtures__/`;
