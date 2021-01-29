@@ -7,7 +7,24 @@ Compares two configuration files and shows a difference.
 
 <a href="https://codeclimate.com/github/svetaminsk/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f4f5c64870f1e5b4cf4b/test_coverage" /></a>
 
-# How it works:
-[![asciicast](https://asciinema.org/a/w3cfyp2TUCC0wy219EXUrZPQB.svg)](https://asciinema.org/a/w3cfyp2TUCC0wy219EXUrZPQB)
+## Description
+Gendiff compares two configuration files and shows a difference.
+
+## Install
+```sudo npm install -g frontend-gendiff-lvl2```
+
+## Use
+```gendiff [options] <pathToFile1> <pathToFile2>```
+
+Options:  
+`-V, --version` output the version number  
+`-f, --format [type]` output format  
+`-h, --help` output usage information  
+
+`[type]` - `plain`, `json`, `nested`  
+`<pathToFile>` - path to json or yaml file
+
+## How it works:
+[![asciicast](https://asciinema.org/a/0tAidgSI013IBbiD4udYXOsXL.svg)](https://asciinema.org/a/0tAidgSI013IBbiD4udYXOsXL)
 
 

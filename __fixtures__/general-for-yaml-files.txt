@@ -1,8 +1,0 @@
-{
-  - ip: 10.0.0.51
-  + ip: 10.0.0.516
-    password: xidighei
-    sms_list: hunter12@sms.mob.ru
-  - user: arc
-  + user: arc2
-}
