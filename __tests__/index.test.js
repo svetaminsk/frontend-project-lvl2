@@ -1,6 +1,8 @@
+import { test, expect } from '@jest/globals';
 import fs from 'fs';
 import path from 'path';
 import gendiff from '../bin/index.js';
+import { test, expect } from '@jest/globals';
 
 const extensionsWithFormats = [
   ['json', 'stylish'], ['json', 'plain'], ['json', 'json'],
