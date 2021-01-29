@@ -1,24 +1,36 @@
-import { test, expect } from '@jest/globals';
 import fs from 'fs';
-import path from 'path';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import gendiff from '../bin/index.js';
-import { test, expect } from '@jest/globals';
 
-const extensionsWithFormats = [
-  ['json', 'stylish'], ['json', 'plain'], ['json', 'json'],
-  ['yml', 'stylish'], ['yml', 'plain'], ['yml', 'json'],
-];
-const __dirname = path.resolve();
-const fixturesPath = `${__dirname}/__tests__/__fixtures__/`;
-const getExpectedResult = (format) => (fs.readFileSync(`${__dirname}/__tests__/__fixtures__/${format}.txt`, 'utf8'));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-test.each(extensionsWithFormats)(
-  'gendiff(%s), format=%s',
-  (ext, format) => {
-    const result = gendiff(`${fixturesPath}file1.${ext}`, `${fixturesPath}file2.${ext}`, format);
-    expect(result).toMatch(getExpectedResult(format));
-  },
-);
-test('gendiff(empty)', () => {
-  expect(() => gendiff()).toThrow();
+const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
+const getContent = (filePath) => fs.readFileSync(filePath, 'utf-8');
+describe('stylish format', () => {
+  test('stylish json', () => {
+    expect(gendiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'stylish')).toEqual(getContent(getFixturePath('stylish.txt')).trim());
+  });
+  test('stylish yaml', () => {
+    expect(gendiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), 'stylish')).toEqual(getContent(getFixturePath('stylish.txt').trim()));
+  });
+});
+
+describe('plain format', () => {
+  test('plain format', () => {
+    expect(gendiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'plain')).toEqual(getContent(getFixturePath('plain.txt')).trim());
+  });
+  test('plain format yaml', () => {
+    expect(gendiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), 'plain')).toEqual(getContent(getFixturePath('plain.txt')).trim());
+  });
+});
+
+describe('json format', () => {
+  test('json format', () => {
+    expect(gendiff(getFixturePath('file1.json'), getFixturePath('file2.json'), 'json')).toEqual(getContent(getFixturePath('json.txt')).trim());
+  });
+  test('json format yaml', () => {
+    expect(gendiff(getFixturePath('file1.yml'), getFixturePath('file2.yml'), 'json')).toEqual(getContent(getFixturePath('json.txt')).trim());
+  });
 });
