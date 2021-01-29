@@ -25,7 +25,7 @@
     "test": "npx jest"
   },
   "bin": {
-    "genDiff": "bin/genDiff.js"
+    "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
     "commander": "^7.0.0",
