@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import program from 'commander';
 import process from 'process';
-import gendiff from './index.js';
+import genDiff from './index.js';
 
 program
   .version('0.1.0')
@@ -9,7 +9,7 @@ program
   .option('-f, --format [type]', 'output format', 'stylish')
   .arguments('<firstConfig> <secondConfig>')
   .action((first, second, options) => {
-    console.log(gendiff(first, second, options.format));
+    console.log(genDiff(first, second, options.format));
   });
 
 program.parse(process.argv);

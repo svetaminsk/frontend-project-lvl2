@@ -6,13 +6,13 @@
 <a href="https://codeclimate.com/github/svetaminsk/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/f4f5c64870f1e5b4cf4b/test_coverage" /></a>
 
 ## Description
-Gendiff compares two configuration files and shows a difference.
+genDiff compares two configuration files and shows a difference.
 
 ## Install
-```sudo npm install -g frontend-gendiff-lvl2```
+```sudo npm install -g frontend-genDiff-lvl2```
 
 ## Use
-```gendiff [options] <pathToFile1> <pathToFile2>```
+```genDiff [options] <pathToFile1> <pathToFile2>```
 
 Options:  
 `-V, --version` output the version number  

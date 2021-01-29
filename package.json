@@ -1,7 +1,6 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "type": "module",
   "description": "[![Actions Status](https://github.com/svetaminsk/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/svetaminsk/frontend-project-lvl2/actions)",
   "repository": {
     "type": "git",
@@ -17,6 +16,7 @@
   },
   "homepage": "https://github.com/svetaminsk/frontend-project-lvl2#readme",
   "main": "index.js",
+  "type": "module",
   "jest": {
     "testEnvironment": "node",
     "transform": {}
@@ -25,7 +25,7 @@
     "test": "npx jest"
   },
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "genDiff": "bin/genDiff.js"
   },
   "dependencies": {
     "commander": "^7.0.0",

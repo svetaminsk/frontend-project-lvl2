@@ -6,7 +6,7 @@ publish:
 	npm link
 
 help:
-	npx babel-node src/bin/gendiff.js -h
+	npx babel-node src/bin/genDiff.js -h
 
 lint:
 	npx eslint .
